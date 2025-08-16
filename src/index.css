@@ -18,8 +18,8 @@ All colors MUST be HSL.
     --popover: 0 0% 8%;
     --popover-foreground: 0 0% 95%;
 
-    /* Professional accent color - Blue */
-    --primary: 210 100% 60%;
+    /* Professional accent color - Updated green */
+    --primary: 150 15% 58%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 15%;
@@ -28,7 +28,7 @@ All colors MUST be HSL.
     --muted: 0 0% 12%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 210 100% 60%;
+    --accent: 150 15% 58%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -36,7 +36,7 @@ All colors MUST be HSL.
 
     --border: 0 0% 20%;
     --input: 0 0% 15%;
-    --ring: 210 100% 60%;
+    --ring: 150 15% 58%;
 
     --radius: 0.5rem;
 
@@ -46,12 +46,12 @@ All colors MUST be HSL.
 
     --sidebar-background: 0 0% 8%;
     --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 210 100% 60%;
+    --sidebar-primary: 150 15% 58%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 15%;
     --sidebar-accent-foreground: 0 0% 95%;
     --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 210 100% 60%;
+    --sidebar-ring: 150 15% 58%;
   }
 
   .dark {
@@ -102,5 +102,33 @@ All colors MUST be HSL.
     @apply text-foreground;
     background: #1e1e1e;
     min-height: 100vh;
+  }
+
+  /* Custom button hover effects */
+  .btn-primary-hover:hover {
+    background: linear-gradient(to right, #8e9f97, #4a4a4a) !important;
+  }
+
+  /* Network background pattern */
+  .network-bg {
+    background-image: 
+      radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
+    position: relative;
+  }
+  
+  .network-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      linear-gradient(45deg, transparent 49%, rgba(59, 130, 246, 0.02) 49%, rgba(59, 130, 246, 0.02) 51%, transparent 51%),
+      linear-gradient(-45deg, transparent 49%, rgba(59, 130, 246, 0.02) 49%, rgba(59, 130, 246, 0.02) 51%, transparent 51%);
+    background-size: 60px 60px;
+    z-index: -1;
   }
 }

@@ -1,3 +1,4 @@
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -34,20 +35,25 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Header */}
       <header className="container mx-auto px-4 py-6 flex justify-between items-center">
-        <div className="text-xl font-bold text-center">CoSINe+</div>
-        <Button className="bg-[#9aeba3] text-black hover:bg-[#8dd999]">Book Demo</Button>
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 bg-gradient-to-br from-slate-400 to-slate-600 rounded-lg flex items-center justify-center">
+            <span className="text-xs font-bold text-white">C+</span>
+          </div>
+          <div className="text-xl font-bold">CoSINe+</div>
+        </div>
+        <Button className="bg-[#909f96] text-black hover:bg-[#8e9f97] btn-primary-hover">Contact Us</Button>
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20 text-center">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-          More Automation. No More Manual Work.
+      <section className="container mx-auto px-4 py-20 text-center network-bg">
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight bg-gradient-to-r from-slate-300 to-slate-500 bg-clip-text text-transparent">
+          We Handle Systems, So You Can Handle People
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
-          Intelligence-Driven Automation that replaces Interference with Focus
+          Issues Left Behind, by Determining the Right Angle.
         </p>
         <div className="flex flex-col items-center gap-4">
-          <Button size="lg" className="text-lg px-8 py-6 bg-[#9aeba3] text-black hover:bg-[#8dd999]">
+          <Button size="lg" className="text-lg px-8 py-6 bg-[#909f96] text-black hover:bg-[#8e9f97] btn-primary-hover">
             Book Demo
           </Button>
           <p className="text-sm text-muted-foreground">See it working</p>
@@ -64,31 +70,27 @@ const Index = () => {
 
       {/* Services Section */}
       <section className="container mx-auto px-4 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-center">Website Attendant</CardTitle>
-            </CardHeader>
-            <CardContent className="text-center">
-              <Button variant="outline" className="text-center">Details</Button>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-center">Email Handler</CardTitle>
-            </CardHeader>
-            <CardContent className="text-center">
-              <Button variant="outline" className="text-center">Details</Button>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-center">Review Responder</CardTitle>
-            </CardHeader>
-            <CardContent className="text-center">
-              <Button variant="outline" className="text-center">Details</Button>
-            </CardContent>
-          </Card>
+        <div className="max-w-2xl mx-auto">
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="website-watcher">
+              <AccordionTrigger className="text-left">Website Watcher</AccordionTrigger>
+              <AccordionContent>
+                Monitor Structure, Efficiency, Engage Visitors or Reply to Inquiries.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="email-handler">
+              <AccordionTrigger className="text-left">Email Handler</AccordionTrigger>
+              <AccordionContent>
+                Auto-respond to the emails you hate dealing with.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="review-responder">
+              <AccordionTrigger className="text-left">Review Responder</AccordionTrigger>
+              <AccordionContent>
+                Auto-handle Google reviews, social comments, and lead follow-ups.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </section>
 
@@ -182,7 +184,7 @@ const Index = () => {
               <Button 
                 type="submit" 
                 size="lg" 
-                className="w-full text-lg px-8 py-6 bg-[#9aeba3] text-black hover:bg-[#8dd999]"
+                className="w-full text-lg px-8 py-6 bg-[#909f96] text-black hover:bg-[#8e9f97] btn-primary-hover"
               >
                 Book Demo
               </Button>
