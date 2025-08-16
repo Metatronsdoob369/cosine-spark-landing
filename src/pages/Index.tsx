@@ -59,13 +59,10 @@ const Index = () => {
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
           Automation at the right angle — transforming interference into clarity, so your team can move with focus and momentum.
         </p>
-        <div className="flex justify-center gap-4">
-          <Button size="lg" className="text-lg px-8 py-6">
+        <div className="flex justify-center">
+          <Button size="lg" className="text-lg px-8 py-6 bg-cosine-sage text-black hover:bg-cosine-mint">
             Book Demo
           </Button>
-          <a href="#demo" className="text-lg px-8 py-6 flex items-center text-cosine-sage hover:underline">
-            See It in Action
-          </a>
         </div>
       </section>
 

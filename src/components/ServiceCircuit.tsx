@@ -69,12 +69,15 @@ export function ServiceCircuit() {
           const isActive = active === idx;
           return (
             <div key={node.id} className="relative">
-              {/* Node */}
+              {/* Node - n8n webhook trigger style */}
               <motion.button
                 onClick={() => toggle(idx)}
                 whileHover={{ scale: 1.04 }}
-                className="w-16 h-16 rounded-full flex items-center justify-center font-semibold text-white focus:outline-none"
-                style={{ background: isActive ? brand.nodeActive : brand.nodeIdle }}
+                className="relative w-16 h-16 flex items-center justify-center font-semibold text-white focus:outline-none"
+                style={{
+                  background: isActive ? brand.nodeActive : brand.nodeIdle,
+                  clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)", // hexagon
+                }}
                 animate={
                   isActive
                     ? { boxShadow: "0 0 18px 2px rgba(154,235,163,.45)" }
@@ -94,7 +97,31 @@ export function ServiceCircuit() {
                 }
                 aria-pressed={isActive}
               >
-                {node.title[0]}
+                {/* Letter */}
+                <span className="relative z-10">{node.title[0]}</span>
+                
+                {/* Spinning arrow when active */}
+                {isActive && (
+                  <motion.div
+                    className="absolute inset-0 flex items-center justify-center"
+                    initial={{ rotate: 0, scale: 0 }}
+                    animate={{ rotate: 360, scale: 1 }}
+                    transition={{ 
+                      rotate: { duration: 1, repeat: Infinity, ease: "linear" },
+                      scale: { duration: 0.3, ease: "easeOut" }
+                    }}
+                  >
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                      <path 
+                        d="M6 1L10 6L6 11M10 6H2" 
+                        stroke="rgba(255,255,255,0.8)" 
+                        strokeWidth="1.5" 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </motion.div>
+                )}
               </motion.button>
 
               {/* Connector + Card (renders only when active) */}
@@ -120,15 +147,31 @@ export function ServiceCircuit() {
                     />
                   </motion.svg>
 
-                  {/* card */}
+                  {/* n8n-style node card */}
                   <motion.div
-                    className="ml-[220px] -mt-6 w-72 rounded-2xl p-5"
-                    style={{ background: brand.cardBg }}
+                    className="ml-[220px] -mt-6 w-72 rounded-2xl p-5 border"
+                    style={{ 
+                      background: brand.cardBg,
+                      borderColor: brand.nodeActive,
+                      boxShadow: `0 0 12px 1px rgba(154,235,163,0.2)`
+                    }}
                     initial={{ opacity: 0, y: -10, scale: 0.98 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ duration: 0.35, ease: "easeOut" }}
+                    transition={{ duration: 0.35, ease: "easeOut", delay: 0.2 }}
                   >
-                    <h3 className="text-white text-base font-medium mb-1">{node.title}</h3>
+                    {/* Node header like n8n */}
+                    <div className="flex items-center mb-3">
+                      <div 
+                        className="w-8 h-8 flex items-center justify-center text-sm font-bold text-white mr-3"
+                        style={{
+                          background: brand.nodeActive,
+                          clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
+                        }}
+                      >
+                        {node.title[0]}
+                      </div>
+                      <h3 className="text-white text-base font-medium">{node.title}</h3>
+                    </div>
                     <p className="text-gray-300 text-sm leading-relaxed">{node.description}</p>
                   </motion.div>
                 </div>
