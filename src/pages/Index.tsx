@@ -87,6 +87,9 @@ const Index = () => {
               border: "1px solid rgba(255,255,255,0.2)",
               textShadow: "0 1px 2px rgba(0,0,0,0.3)"
             }}
+            onClick={() => {
+              document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
+            }}
             onMouseEnter={(e) => {
               e.currentTarget.style.background = "linear-gradient(145deg, #9aeba3, #85d690)";
               e.currentTarget.style.color = "white";
@@ -157,7 +160,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="container mx-auto px-4 py-20 text-center">
+      <section id="contact-section" className="container mx-auto px-4 py-20 text-center">
         <h2 className="text-4xl font-bold mb-4" style={{fontFamily: 'JetBrains Mono, monospace'}}>Ready to Automate with Precision?</h2>
         <p className="text-xl text-muted-foreground mb-8">New strategies. Existing leads rediscovered.<br />Let's find the right angle for your workflow.</p>
         
