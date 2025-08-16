@@ -37,8 +37,21 @@ const Index = () => {
       <header className="container mx-auto px-4 py-6 flex justify-between items-center">
         <div className="flex items-center gap-3">
           <div className="flex flex-col">
-            <div className="text-xl font-bold tracking-tight font-monument">
-              CoSINe<sup className="text-sm text-cosine-sage">+</sup>
+            <div className="text-xl font-bold tracking-tight font-monument flex items-center">
+              <span className="text-white">CoSINe</span>
+              <sup 
+                className="text-lg font-bold ml-1"
+                style={{
+                  background: "linear-gradient(145deg, #de7b3b, #c46428, #de7b3b)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                  textShadow: "0 0 8px rgba(222,123,59,0.6)",
+                  filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.4))"
+                }}
+              >
+                +
+              </sup>
             </div>
             <span className="text-[12px] tracking-[0.2em] uppercase text-cosine-sage">
               Systems with a Sine of Life
@@ -51,18 +64,67 @@ const Index = () => {
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20 text-center">
         <h1
-          className="text-4xl md:text-6xl font-bold mb-6 leading-tight tracking-wider bg-gradient-to-r from-slate-200 via-white to-slate-300 bg-clip-text text-transparent font-monument"
-          style={{ letterSpacing: "0.1em", textShadow: "0 0 30px rgba(255,255,255,0.3)" }}
+          className="text-4xl md:text-6xl font-bold mb-6 leading-tight tracking-wider font-monument"
+          style={{ 
+            letterSpacing: "0.1em",
+            background: "linear-gradient(135deg, #c0c0c0 0%, #ffffff 25%, #e8e8e8 50%, #ffffff 75%, #a8a8a8 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+            textShadow: "0 0 40px rgba(255,255,255,0.4), 0 0 80px rgba(255,255,255,0.2)",
+            filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.3))"
+          }}
         >
           We Power Systems, So You Can Power Your People
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
           Automation at the right angle — transforming interference into clarity, so your team can move with focus and momentum.
         </p>
-        <div className="flex justify-center">
-          <Button size="lg" className="text-lg px-8 py-6 bg-cosine-sage text-black hover:bg-cosine-mint">
+        <div className="flex justify-center mb-8">
+          <Button 
+            size="lg" 
+            className="text-lg px-8 py-6 bg-cosine-sage text-black font-bold transition-all duration-300 shadow-lg hover:shadow-xl"
+            style={{
+              background: "linear-gradient(145deg, #909f96, #7a8a80)",
+              boxShadow: "0 8px 16px rgba(0,0,0,0.2), inset 0 1px 2px rgba(255,255,255,0.3)",
+              border: "1px solid rgba(255,255,255,0.2)",
+              textShadow: "0 1px 2px rgba(0,0,0,0.3)"
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "linear-gradient(145deg, #9aeba3, #85d690)";
+              e.currentTarget.style.color = "white";
+              e.currentTarget.style.textShadow = "0 1px 3px rgba(0,0,0,0.5)";
+              e.currentTarget.style.transform = "translateY(-2px)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "linear-gradient(145deg, #909f96, #7a8a80)";
+              e.currentTarget.style.color = "black";
+              e.currentTarget.style.textShadow = "0 1px 2px rgba(0,0,0,0.3)";
+              e.currentTarget.style.transform = "translateY(0px)";
+            }}
+          >
             Book Demo
           </Button>
+        </div>
+        
+        {/* AI Powered Section */}
+        <div className="flex items-center justify-center gap-3 mb-12">
+          <span className="text-white font-monument text-lg">Custom Built Intelligent</span>
+          {/* AI Sparkle Icon */}
+          <div className="relative">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-cosine-mint">
+              <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+              <path d="M19 5L19.5 7L21 7.5L19.5 8L19 10L18.5 8L17 7.5L18.5 7L19 5Z" fill="currentColor"/>
+              <path d="M5 15L5.5 17L7 17.5L5.5 18L5 20L4.5 18L3 17.5L4.5 17L5 15Z" fill="currentColor"/>
+            </svg>
+            {/* Sparkle animation */}
+            <div className="absolute inset-0 animate-pulse">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white opacity-30">
+                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+              </svg>
+            </div>
+          </div>
+          <span className="text-white font-monument text-lg">Powered Nodes</span>
         </div>
       </section>
 
