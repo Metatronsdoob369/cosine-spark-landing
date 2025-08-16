@@ -49,11 +49,16 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20 text-center">
+        <div className="mb-4">
+          <h2 className="text-lg md:text-xl text-[#909f96] font-medium tracking-wide" style={{fontFamily: 'Monument Extended, sans-serif'}}>
+            Systems with a Sine of Life
+          </h2>
+        </div>
         <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-slate-300 to-slate-500 bg-clip-text text-transparent" style={{fontFamily: 'Monument Extended, sans-serif'}}>
           We Handle Systems, So You Can Handle People
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
-          Issues Left Behind, by Determining the Right Angle.
+          Automation at the right angle — transforming interference into clarity, so your team can move with focus and momentum.
         </p>
         <div className="flex flex-col items-center gap-4">
           <Button size="lg" className="text-lg px-8 py-6 bg-[#909f96] text-black hover:bg-[#8e9f97] btn-primary-hover">
@@ -66,7 +71,7 @@ const Index = () => {
             className="flex items-center gap-2 mt-4 text-center"
           >
             <Play size={16} />
-            How people are explaining it
+            See It in Action
           </Button>
         </div>
       </section>
@@ -76,21 +81,21 @@ const Index = () => {
         <div className="max-w-2xl mx-auto">
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="website-watcher">
-              <AccordionTrigger className="text-left">Website Watcher</AccordionTrigger>
+              <AccordionTrigger className="text-left" style={{fontFamily: 'Monument Extended, sans-serif'}}>Website Watcher</AccordionTrigger>
               <AccordionContent>
-                Monitor Structure, Efficiency, Engage Visitors or Reply to Inquiries.
+                Never miss a signal. Continuous monitoring and automated responses that surface insights before they become issues.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="email-handler">
-              <AccordionTrigger className="text-left">Email Handler</AccordionTrigger>
+              <AccordionTrigger className="text-left" style={{fontFamily: 'Monument Extended, sans-serif'}}>Email Handler</AccordionTrigger>
               <AccordionContent>
-                Auto-respond to the emails you hate dealing with.
+                Your inbox, decluttered. Intelligent filtering, auto-responses, and triage that respects context — so you don't drown in noise.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="review-responder">
-              <AccordionTrigger className="text-left">Review Responder</AccordionTrigger>
+              <AccordionTrigger className="text-left" style={{fontFamily: 'Monument Extended, sans-serif'}}>Review Responder</AccordionTrigger>
               <AccordionContent>
-                Auto-handle Google reviews, social comments, and lead follow-ups.
+                Turn feedback into forward motion. Automated, on-brand replies that protect reputation and build trust at scale.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -102,10 +107,11 @@ const Index = () => {
         <div className="max-w-2xl mx-auto">
           <Card className="text-center">
             <CardHeader>
-              <CardTitle>Transparent Pricing Structure. You+Problem= Solution</CardTitle>
+              <CardTitle style={{fontFamily: 'Monument Extended, sans-serif'}}>Transparent Structure. Exponential Value.</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-xl">$500/Month Minimum. Includes all three core services.</p>
+              <p className="text-xl">From $500/month — includes all three core services.</p>
+              <p className="text-sm text-muted-foreground mt-2">Add-ons scale with your workflow, not against it.</p>
             </CardContent>
           </Card>
         </div>
@@ -117,15 +123,15 @@ const Index = () => {
         <ul className="grid grid-cols-2 md:grid-cols-4 gap-4 text-muted-foreground">
           <li>Medical Practices</li>
           <li>Law Firms</li>
-          <li>Home Services Contractors</li>
+          <li>Home Service Contractors</li>
           <li>Financial Advisors</li>
         </ul>
       </section>
 
       {/* CTA Section */}
       <section className="container mx-auto px-4 py-20 text-center">
-        <h2 className="text-4xl font-bold mb-4">Ready to automate your workflow?</h2>
-        <p className="text-xl text-muted-foreground mb-8">New Strategies to discover Existing Leads.</p>
+        <h2 className="text-4xl font-bold mb-4" style={{fontFamily: 'Monument Extended, sans-serif'}}>Ready to Automate with Precision?</h2>
+        <p className="text-xl text-muted-foreground mb-8">New strategies. Existing leads rediscovered.<br />Let's find the right angle for your workflow.</p>
         
         <div className="max-w-lg mx-auto">
           {isSubmitted ? (
@@ -199,7 +205,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="container mx-auto px-4 py-12 text-center border-t border-border">
         <p className="text-sm text-muted-foreground mb-2">
-          Enterprise-grade automation for professional services powered by mathematical business optimization.
+          Precision automation for high-performance professionals. Systems engineered for clarity, not complexity.
         </p>
         <p className="text-muted-foreground">© 2024 CoSINe+. All rights reserved.</p>
       </footer>
