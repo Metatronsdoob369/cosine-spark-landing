@@ -36,20 +36,14 @@ const Index = () => {
       {/* Header */}
       <header className="container mx-auto px-4 py-6 flex justify-between items-center">
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 bg-gradient-to-br from-[#909f96] to-[#6b7b6f] rounded-2xl flex items-center justify-center shadow-lg border border-[#909f96]/20">
-            <span className="text-lg font-bold text-white tracking-tight">C<sup className="text-xs">+</sup></span>
-          </div>
-          <div className="flex flex-col">
-            <div className="text-xl font-bold tracking-tight" style={{fontFamily: 'JetBrains Mono, monospace'}}>CoSINe<sup className="text-sm text-[#909f96]">+</sup></div>
-            <div className="text-xs text-gray-500 font-medium">AUTONOMOUS</div>
-          </div>
+          <div className="text-xl font-bold tracking-tight" style={{fontFamily: 'Orbitron, monospace'}}>CoSINe<sup className="text-sm text-[#909f96]">+</sup></div>
         </div>
         <Button className="bg-[#909f96] text-black hover:bg-[#8e9f97] btn-primary-hover">Contact Us</Button>
       </header>
 
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-white tracking-wider" style={{fontFamily: 'JetBrains Mono, monospace', letterSpacing: '0.1em'}}>
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight tracking-wider bg-gradient-to-r from-slate-200 via-white to-slate-300 bg-clip-text text-transparent" style={{fontFamily: 'Orbitron, monospace', letterSpacing: '0.1em', textShadow: '0 0 30px rgba(255,255,255,0.3)'}}>
           SYSTEMS WITH A SINE OF LIFE
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
