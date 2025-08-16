@@ -35,7 +35,8 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Header */}
       <header className="container mx-auto px-4 py-6 flex justify-between items-center">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
+          <img src="/logo.svg" alt="CoSINe+ Logo" className="w-12 h-12" />
           <div className="flex flex-col">
             <div className="text-xl font-bold tracking-tight font-monument flex items-center">
               <span className="text-white">CoSINe</span>
