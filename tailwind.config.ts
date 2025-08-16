@@ -18,7 +18,17 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				monument: ['"Monument Grotesk"', "system-ui", "sans-serif"],
+			},
 			colors: {
+				cosine: {
+					sage: "#909f96",
+					black: "#1e1e1e",
+					mint: "#9aeba3",
+					copper: "#de7b3b",
+					russet: "#a15d3d",
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -84,11 +94,14 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+				beckon: { "0%,100%": { boxShadow: "0 0 0 0 rgba(154,235,163,.0)" },
+                  "50%":     { boxShadow: "0 0 24px 4px rgba(154,235,163,.35)" } },
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				beckon: "beckon 2.8s ease-in-out infinite",
 			}
 		}
 	},

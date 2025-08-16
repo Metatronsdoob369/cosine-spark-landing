@@ -1,4 +1,4 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { ServiceCircuit } from "@/components/ServiceCircuit";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -36,59 +36,42 @@ const Index = () => {
       {/* Header */}
       <header className="container mx-auto px-4 py-6 flex justify-between items-center">
         <div className="flex items-center gap-3">
-          <div className="text-xl font-bold tracking-tight" style={{fontFamily: 'Orbitron, monospace'}}>CoSINe<sup className="text-sm text-[#909f96]">+</sup></div>
+          <div className="flex flex-col">
+            <div className="text-xl font-bold tracking-tight font-monument">
+              CoSINe<sup className="text-sm text-cosine-sage">+</sup>
+            </div>
+            <span className="text-[12px] tracking-[0.2em] uppercase text-cosine-sage">
+              Systems with a Sine of Life
+            </span>
+          </div>
         </div>
         <Button className="bg-[#909f96] text-black hover:bg-[#8e9f97] btn-primary-hover">Contact Us</Button>
       </header>
 
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight tracking-wider bg-gradient-to-r from-slate-200 via-white to-slate-300 bg-clip-text text-transparent" style={{fontFamily: 'Orbitron, monospace', letterSpacing: '0.1em', textShadow: '0 0 30px rgba(255,255,255,0.3)'}}>
-          SYSTEMS WITH A SINE OF LIFE
+        <h1
+          className="text-4xl md:text-6xl font-bold mb-6 leading-tight tracking-wider bg-gradient-to-r from-slate-200 via-white to-slate-300 bg-clip-text text-transparent font-monument"
+          style={{ letterSpacing: "0.1em", textShadow: "0 0 30px rgba(255,255,255,0.3)" }}
+        >
+          We Power Systems, So You Can Power Your People
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
           Automation at the right angle — transforming interference into clarity, so your team can move with focus and momentum.
         </p>
-        <div className="flex flex-col items-center gap-4">
-          <Button size="lg" className="text-lg px-8 py-6 bg-[#909f96] text-black hover:bg-[#8e9f97] btn-primary-hover">
+        <div className="flex justify-center gap-4">
+          <Button size="lg" className="text-lg px-8 py-6">
             Book Demo
           </Button>
-          <p className="text-sm text-muted-foreground">See it working</p>
-          <Button 
-            variant="outline" 
-            onClick={playPodcast}
-            className="flex items-center gap-2 mt-4 text-center"
-          >
-            <Play size={16} />
+          <a href="#demo" className="text-lg px-8 py-6 flex items-center text-cosine-sage hover:underline">
             See It in Action
-          </Button>
+          </a>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="container mx-auto px-4 py-20">
-        <div className="max-w-2xl mx-auto">
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="website-watcher">
-              <AccordionTrigger className="text-left" style={{fontFamily: 'JetBrains Mono, monospace'}}>Website Watcher</AccordionTrigger>
-              <AccordionContent>
-                Never miss a signal. Continuous monitoring and automated responses that surface insights before they become issues.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="email-handler">
-              <AccordionTrigger className="text-left" style={{fontFamily: 'JetBrains Mono, monospace'}}>Email Handler</AccordionTrigger>
-              <AccordionContent>
-                Your inbox, decluttered. Intelligent filtering, auto-responses, and triage that respects context — so you don't drown in noise.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="review-responder">
-              <AccordionTrigger className="text-left" style={{fontFamily: 'JetBrains Mono, monospace'}}>Review Responder</AccordionTrigger>
-              <AccordionContent>
-                Turn feedback into forward motion. Automated, on-brand replies that protect reputation and build trust at scale.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </div>
+      <section className="container mx-auto px-4 py-24">
+        <ServiceCircuit autoDemo />
       </section>
 
       {/* Pricing Section */}
