@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 
 const Index = () => {
   return (
@@ -26,20 +26,29 @@ const Index = () => {
       {/* Services Section */}
       <section className="container mx-auto px-4 py-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Card className="p-8">
-            <div className="h-40 flex items-center justify-center text-muted-foreground">
-              Service 1 Placeholder
-            </div>
+          <Card>
+            <CardHeader>
+              <CardTitle>Website Attendant</CardTitle>
+              <CardDescription>
+                Monitor Structure, Efficiency, Engage Visitors or Reply to Inquiries.
+              </CardDescription>
+            </CardHeader>
           </Card>
-          <Card className="p-8">
-            <div className="h-40 flex items-center justify-center text-muted-foreground">
-              Service 2 Placeholder
-            </div>
+          <Card>
+            <CardHeader>
+              <CardTitle>Email Handler</CardTitle>
+              <CardDescription>
+                Auto-respond to the emails you hate dealing with.
+              </CardDescription>
+            </CardHeader>
           </Card>
-          <Card className="p-8">
-            <div className="h-40 flex items-center justify-center text-muted-foreground">
-              Service 3 Placeholder
-            </div>
+          <Card>
+            <CardHeader>
+              <CardTitle>Review Responder</CardTitle>
+              <CardDescription>
+                Auto-handle Google reviews, social comments, and lead follow-ups.
+              </CardDescription>
+            </CardHeader>
           </Card>
         </div>
       </section>
@@ -47,26 +56,25 @@ const Index = () => {
       {/* Pricing Section */}
       <section className="container mx-auto px-4 py-20">
         <div className="max-w-2xl mx-auto">
-          <Card className="p-12 text-center">
-            <div className="h-60 flex items-center justify-center text-muted-foreground">
-              Pricing Placeholder
-            </div>
+          <Card className="text-center">
+            <CardHeader>
+              <CardTitle>Transparent Pricing Structure. You+Problem= Solution</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-xl">$500/Month Minimum. Includes all three core services.</p>
+            </CardContent>
           </Card>
         </div>
       </section>
 
       {/* Social Proof Section */}
       <section className="container mx-auto px-4 py-20 text-center">
-        <h2 className="text-3xl font-bold mb-8">Trusted by leading businesses</h2>
+        <h2 className="text-3xl font-bold mb-8">Trusted by High-Performance Professionals</h2>
         <ul className="grid grid-cols-2 md:grid-cols-4 gap-4 text-muted-foreground">
-          <li>Manufacturing</li>
-          <li>Healthcare</li>
-          <li>Finance</li>
-          <li>Technology</li>
-          <li>Retail</li>
-          <li>Education</li>
-          <li>Government</li>
-          <li>Logistics</li>
+          <li>Medical Practices</li>
+          <li>Law Firms</li>
+          <li>Home Services Contractors</li>
+          <li>Financial Advisors</li>
         </ul>
       </section>
 
