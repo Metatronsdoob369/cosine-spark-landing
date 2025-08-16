@@ -1,4 +1,6 @@
-# Welcome to your Lovable project
+# CoSINe+ Professional Landing Page
+
+Enterprise automation services for high-income professionals. Clean, corporate design targeting $500/month minimum automation contracts.
 
 ## Project info
 
