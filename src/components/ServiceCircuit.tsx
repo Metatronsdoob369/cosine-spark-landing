@@ -58,128 +58,124 @@ function SinePath({ L = 220, amp = 10 }: { L?: number; amp?: number }) {
   );
 }
 
+const getServiceIcon = (nodeId: string) => {
+  const icons = {
+    watcher: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 6v12M6 12h12"/>
+      </svg>
+    ),
+    handler: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+        <polyline points="22,6 12,13 2,6"/>
+      </svg>
+    ),
+    responder: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        <path d="M8 9h8M8 13h6"/>
+      </svg>
+    ),
+  };
+  return icons[nodeId as keyof typeof icons];
+};
+
 export function ServiceCircuit() {
   const [active, setActive] = useState<number | null>(null);
   const toggle = (i: number) => setActive((a) => (a === i ? null : i));
 
   return (
-    <div className="relative mx-auto w-full max-w-3xl">
-      <div className="flex flex-col space-y-20">
-        {NODES.map((node, idx) => {
-          const isActive = active === idx;
-          return (
-            <div key={node.id} className="relative">
-              {/* Node - n8n webhook trigger style */}
-              <motion.button
-                onClick={() => toggle(idx)}
-                whileHover={{ scale: 1.04 }}
-                className="relative w-16 h-16 flex items-center justify-center font-semibold text-white focus:outline-none"
-                style={{
-                  background: isActive ? brand.nodeActive : brand.nodeIdle,
-                  clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)", // hexagon
-                }}
-                animate={
-                  isActive
-                    ? { boxShadow: "0 0 18px 2px rgba(154,235,163,.45)" }
-                    : {
-                        // soft idle pulse (very subtle)
-                        boxShadow: [
-                          "0 0 0 0 rgba(154,235,163,0.00)",
-                          "0 0 16px 3px rgba(154,235,163,0.18)",
-                          "0 0 0 0 rgba(154,235,163,0.00)",
-                        ],
-                      }
-                }
-                transition={
-                  isActive
-                    ? { duration: 0.2 }
-                    : { duration: 3.2, repeat: Infinity, ease: "easeInOut" }
-                }
-                aria-pressed={isActive}
-              >
-                {/* Letter */}
-                <span className="relative z-10">{node.title[0]}</span>
-                
-                {/* Spinning arrow when active */}
-                {isActive && (
-                  <motion.div
-                    className="absolute inset-0 flex items-center justify-center"
-                    initial={{ rotate: 0, scale: 0 }}
-                    animate={{ rotate: 360, scale: 1 }}
-                    transition={{ 
-                      rotate: { duration: 1, repeat: Infinity, ease: "linear" },
-                      scale: { duration: 0.3, ease: "easeOut" }
-                    }}
-                  >
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                      <path 
-                        d="M6 1L10 6L6 11M10 6H2" 
-                        stroke="rgba(255,255,255,0.8)" 
-                        strokeWidth="1.5" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </motion.div>
-                )}
-              </motion.button>
-
-              {/* Connector + Card (renders only when active) */}
+    <div className="flex flex-col items-center space-y-16 max-w-4xl mx-auto">
+      {NODES.map((node, idx) => {
+        const isActive = active === idx;
+        return (
+          <div key={node.id} className="flex items-center justify-center w-full">
+            {/* Centered n8n-style node */}
+            <motion.button
+              onClick={() => toggle(idx)}
+              whileHover={{ scale: 1.05, y: -2 }}
+              className="relative w-20 h-20 rounded-2xl flex items-center justify-center text-gray-700 focus:outline-none transition-all duration-300"
+              style={{
+                background: isActive 
+                  ? "linear-gradient(145deg, #9aeba3, #85d690)" 
+                  : "linear-gradient(145deg, #f8f9fa, #e9ecef)",
+                boxShadow: isActive
+                  ? "0 8px 20px rgba(154,235,163,0.3), inset 0 1px 2px rgba(255,255,255,0.3)"
+                  : "0 6px 15px rgba(0,0,0,0.1), inset 0 1px 2px rgba(255,255,255,0.8)",
+                border: "1px solid rgba(255,255,255,0.3)",
+              }}
+              animate={
+                isActive
+                  ? { boxShadow: "0 8px 20px rgba(154,235,163,0.4), inset 0 1px 2px rgba(255,255,255,0.3)" }
+                  : {
+                      boxShadow: [
+                        "0 6px 15px rgba(0,0,0,0.1), inset 0 1px 2px rgba(255,255,255,0.8)",
+                        "0 8px 18px rgba(154,235,163,0.15), inset 0 1px 2px rgba(255,255,255,0.8)",
+                        "0 6px 15px rgba(0,0,0,0.1), inset 0 1px 2px rgba(255,255,255,0.8)",
+                      ],
+                    }
+              }
+              transition={
+                isActive
+                  ? { duration: 0.2 }
+                  : { duration: 3.5, repeat: Infinity, ease: "easeInOut" }
+              }
+            >
+              {/* Service Icon */}
+              <div className={`${isActive ? 'text-white' : 'text-gray-600'} transition-colors duration-300`}>
+                {getServiceIcon(node.id)}
+              </div>
+              
+              {/* Processing indicator when active */}
               {isActive && (
-                <div className="absolute left-20 top-7">
-                  {/* wire: draw once, then subtle breathe */}
-                  <motion.svg
-                    width="260"
-                    height="40"
-                    viewBox="0 -20 260 40"
-                    className="overflow-visible"
-                  >
-                    <SinePath L={220} amp={10} />
-                    {/* tiny breathing shimmer */}
-                    <motion.circle
-                      r="2"
-                      cx="220"
-                      cy="0"
-                      fill={brand.path}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: [0, 1, 0] }}
-                      transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut", delay: 0.9 }}
-                    />
-                  </motion.svg>
-
-                  {/* n8n-style node card */}
-                  <motion.div
-                    className="ml-[220px] -mt-6 w-72 rounded-2xl p-5 border"
-                    style={{ 
-                      background: brand.cardBg,
-                      borderColor: brand.nodeActive,
-                      boxShadow: `0 0 12px 1px rgba(154,235,163,0.2)`
-                    }}
-                    initial={{ opacity: 0, y: -10, scale: 0.98 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ duration: 0.35, ease: "easeOut", delay: 0.2 }}
-                  >
-                    {/* Node header like n8n */}
-                    <div className="flex items-center mb-3">
-                      <div 
-                        className="w-8 h-8 flex items-center justify-center text-sm font-bold text-white mr-3"
-                        style={{
-                          background: brand.nodeActive,
-                          clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
-                        }}
-                      >
-                        {node.title[0]}
-                      </div>
-                      <h3 className="text-white text-base font-medium">{node.title}</h3>
-                    </div>
-                    <p className="text-gray-300 text-sm leading-relaxed">{node.description}</p>
-                  </motion.div>
-                </div>
+                <motion.div
+                  className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full"
+                  animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
+                  transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                />
               )}
-            </div>
-          );
-        })}
-      </div>
+            </motion.button>
+
+            {/* Expanded card (appears to the right when active) */}
+            {isActive && (
+              <motion.div
+                className="ml-8 max-w-md"
+                initial={{ opacity: 0, x: -20, scale: 0.95 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+              >
+                <div
+                  className="rounded-2xl p-6 border"
+                  style={{
+                    background: "linear-gradient(145deg, #1e1e1e, #2a2a2a)",
+                    borderColor: "#9aeba3",
+                    boxShadow: "0 8px 25px rgba(154,235,163,0.2), inset 0 1px 2px rgba(255,255,255,0.1)",
+                  }}
+                >
+                  {/* Header with icon */}
+                  <div className="flex items-center mb-4">
+                    <div
+                      className="w-10 h-10 rounded-xl flex items-center justify-center text-gray-700 mr-4"
+                      style={{
+                        background: "linear-gradient(145deg, #9aeba3, #85d690)",
+                        boxShadow: "0 4px 10px rgba(154,235,163,0.3)",
+                      }}
+                    >
+                      <div className="text-white">
+                        {getServiceIcon(node.id)}
+                      </div>
+                    </div>
+                    <h3 className="text-white text-lg font-bold font-monument">{node.title}</h3>
+                  </div>
+                  <p className="text-gray-300 leading-relaxed">{node.description}</p>
+                </div>
+              </motion.div>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }

@@ -58,7 +58,29 @@ const Index = () => {
             </span>
           </div>
         </div>
-        <Button className="bg-[#909f96] text-black hover:bg-[#8e9f97] btn-primary-hover">Contact Us</Button>
+        <Button 
+          className="text-base px-6 py-3 bg-cosine-sage text-black font-bold transition-all duration-300 shadow-lg hover:shadow-xl"
+          style={{
+            background: "linear-gradient(145deg, #909f96, #7a8a80)",
+            boxShadow: "0 6px 12px rgba(0,0,0,0.15), inset 0 1px 2px rgba(255,255,255,0.3)",
+            border: "1px solid rgba(255,255,255,0.2)",
+            textShadow: "0 1px 2px rgba(0,0,0,0.3)"
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = "linear-gradient(145deg, #9aeba3, #85d690)";
+            e.currentTarget.style.color = "white";
+            e.currentTarget.style.textShadow = "0 1px 3px rgba(0,0,0,0.5)";
+            e.currentTarget.style.transform = "translateY(-1px)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = "linear-gradient(145deg, #909f96, #7a8a80)";
+            e.currentTarget.style.color = "black";
+            e.currentTarget.style.textShadow = "0 1px 2px rgba(0,0,0,0.3)";
+            e.currentTarget.style.transform = "translateY(0px)";
+          }}
+        >
+          Contact Us
+        </Button>
       </header>
 
       {/* Hero Section */}
