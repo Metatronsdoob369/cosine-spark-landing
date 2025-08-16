@@ -1,35 +1,9 @@
 import { ServiceCircuit } from "@/components/ServiceCircuit";
+import ContactForm from "@/components/ContactForm";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { useForm } from "react-hook-form";
-import { useState } from "react";
-import { Play } from "lucide-react";
-
-interface FormData {
-  name: string;
-  businessType: string;
-  phone: string;
-  painPoint: string;
-}
 
 const Index = () => {
-  const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>();
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const onSubmit = (data: FormData) => {
-    console.log('Form submitted:', data);
-    setIsSubmitted(true);
-    reset();
-    setTimeout(() => setIsSubmitted(false), 3000);
-  };
-
-  const playPodcast = () => {
-    // Placeholder for podcast functionality
-    console.log('Playing podcast snippet...');
-  };
 
   return (
     <div className="min-h-screen">
@@ -187,73 +161,7 @@ const Index = () => {
         <h2 className="text-4xl font-bold mb-4" style={{fontFamily: 'JetBrains Mono, monospace'}}>Ready to Automate with Precision?</h2>
         <p className="text-xl text-muted-foreground mb-8">New strategies. Existing leads rediscovered.<br />Let's find the right angle for your workflow.</p>
         
-        <div className="max-w-lg mx-auto">
-          {isSubmitted ? (
-            <div className="text-center py-8">
-              <p className="text-xl text-green-400 mb-4">Thank you! We'll be in touch soon.</p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-              <div>
-                <Label htmlFor="name">Name</Label>
-                <Input
-                  id="name"
-                  {...register("name", { required: "Name is required" })}
-                  className="mt-1"
-                />
-                {errors.name && (
-                  <p className="mt-1 text-sm text-red-400">{errors.name.message}</p>
-                )}
-              </div>
-              
-              <div>
-                <Label htmlFor="businessType">Business Type</Label>
-                <Input
-                  id="businessType"
-                  {...register("businessType", { required: "Business type is required" })}
-                  className="mt-1"
-                />
-                {errors.businessType && (
-                  <p className="mt-1 text-sm text-red-400">{errors.businessType.message}</p>
-                )}
-              </div>
-              
-              <div>
-                <Label htmlFor="phone">Phone</Label>
-                <Input
-                  id="phone"
-                  type="tel"
-                  {...register("phone", { required: "Phone number is required" })}
-                  className="mt-1"
-                />
-                {errors.phone && (
-                  <p className="mt-1 text-sm text-red-400">{errors.phone.message}</p>
-                )}
-              </div>
-              
-              <div>
-                <Label htmlFor="painPoint">Current Pain Point</Label>
-                <Textarea
-                  id="painPoint"
-                  {...register("painPoint", { required: "Please describe your pain point" })}
-                  className="mt-1"
-                  rows={3}
-                />
-                {errors.painPoint && (
-                  <p className="mt-1 text-sm text-red-400">{errors.painPoint.message}</p>
-                )}
-              </div>
-              
-              <Button 
-                type="submit" 
-                size="lg" 
-                className="w-full text-lg px-8 py-6 bg-[#909f96] text-black hover:bg-[#8e9f97] btn-primary-hover"
-              >
-                Book Demo
-              </Button>
-            </form>
-          )}
-        </div>
+        <ContactForm />
       </section>
 
       {/* Footer */}
