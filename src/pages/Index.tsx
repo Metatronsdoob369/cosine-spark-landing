@@ -40,7 +40,7 @@ const Index = () => {
             <span className="text-lg font-bold text-white tracking-tight">C<sup className="text-xs">+</sup></span>
           </div>
           <div className="flex flex-col">
-            <div className="text-xl font-bold tracking-tight" style={{fontFamily: 'Monument Extended, sans-serif'}}>CoSINe<sup className="text-sm text-[#909f96]">+</sup></div>
+            <div className="text-xl font-bold tracking-tight" style={{fontFamily: 'JetBrains Mono, monospace'}}>CoSINe<sup className="text-sm text-[#909f96]">+</sup></div>
             <div className="text-xs text-gray-500 font-medium">AUTONOMOUS</div>
           </div>
         </div>
@@ -50,11 +50,11 @@ const Index = () => {
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20 text-center">
         <div className="mb-4">
-          <h2 className="text-lg md:text-xl text-[#909f96] font-medium tracking-wide" style={{fontFamily: 'Monument Extended, sans-serif'}}>
+          <h2 className="text-lg md:text-xl text-[#909f96] font-medium tracking-wide" style={{fontFamily: 'JetBrains Mono, monospace'}}>
             Systems with a Sine of Life
           </h2>
         </div>
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-slate-300 to-slate-500 bg-clip-text text-transparent" style={{fontFamily: 'Monument Extended, sans-serif'}}>
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-slate-300 to-slate-500 bg-clip-text text-transparent" style={{fontFamily: 'JetBrains Mono, monospace'}}>
           We Handle Systems, So You Can Handle People
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
@@ -81,19 +81,19 @@ const Index = () => {
         <div className="max-w-2xl mx-auto">
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="website-watcher">
-              <AccordionTrigger className="text-left" style={{fontFamily: 'Monument Extended, sans-serif'}}>Website Watcher</AccordionTrigger>
+              <AccordionTrigger className="text-left" style={{fontFamily: 'JetBrains Mono, monospace'}}>Website Watcher</AccordionTrigger>
               <AccordionContent>
                 Never miss a signal. Continuous monitoring and automated responses that surface insights before they become issues.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="email-handler">
-              <AccordionTrigger className="text-left" style={{fontFamily: 'Monument Extended, sans-serif'}}>Email Handler</AccordionTrigger>
+              <AccordionTrigger className="text-left" style={{fontFamily: 'JetBrains Mono, monospace'}}>Email Handler</AccordionTrigger>
               <AccordionContent>
                 Your inbox, decluttered. Intelligent filtering, auto-responses, and triage that respects context — so you don't drown in noise.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="review-responder">
-              <AccordionTrigger className="text-left" style={{fontFamily: 'Monument Extended, sans-serif'}}>Review Responder</AccordionTrigger>
+              <AccordionTrigger className="text-left" style={{fontFamily: 'JetBrains Mono, monospace'}}>Review Responder</AccordionTrigger>
               <AccordionContent>
                 Turn feedback into forward motion. Automated, on-brand replies that protect reputation and build trust at scale.
               </AccordionContent>
@@ -107,7 +107,7 @@ const Index = () => {
         <div className="max-w-2xl mx-auto">
           <Card className="text-center">
             <CardHeader>
-              <CardTitle style={{fontFamily: 'Monument Extended, sans-serif'}}>Transparent Structure. Exponential Value.</CardTitle>
+              <CardTitle style={{fontFamily: 'JetBrains Mono, monospace'}}>Transparent Structure. Exponential Value.</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-xl">From $500/month — includes all three core services.</p>
@@ -130,7 +130,7 @@ const Index = () => {
 
       {/* CTA Section */}
       <section className="container mx-auto px-4 py-20 text-center">
-        <h2 className="text-4xl font-bold mb-4" style={{fontFamily: 'Monument Extended, sans-serif'}}>Ready to Automate with Precision?</h2>
+        <h2 className="text-4xl font-bold mb-4" style={{fontFamily: 'JetBrains Mono, monospace'}}>Ready to Automate with Precision?</h2>
         <p className="text-xl text-muted-foreground mb-8">New strategies. Existing leads rediscovered.<br />Let's find the right angle for your workflow.</p>
         
         <div className="max-w-lg mx-auto">
