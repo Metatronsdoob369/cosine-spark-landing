@@ -36,10 +36,13 @@ const Index = () => {
       {/* Header */}
       <header className="container mx-auto px-4 py-6 flex justify-between items-center">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 bg-gradient-to-br from-slate-400 to-slate-600 rounded-lg flex items-center justify-center">
-            <span className="text-xs font-bold text-white">C+</span>
+          <div className="w-12 h-12 bg-gradient-to-br from-[#909f96] to-[#6b7b6f] rounded-2xl flex items-center justify-center shadow-lg border border-[#909f96]/20">
+            <span className="text-lg font-bold text-white tracking-tight">C<sup className="text-xs">+</sup></span>
           </div>
-          <div className="text-xl font-bold">CoSINe+</div>
+          <div className="flex flex-col">
+            <div className="text-xl font-bold tracking-tight">CoSINe<sup className="text-sm text-[#909f96]">+</sup></div>
+            <div className="text-xs text-gray-500 font-medium">AUTONOMOUS</div>
+          </div>
         </div>
         <Button className="bg-[#909f96] text-black hover:bg-[#8e9f97] btn-primary-hover">Contact Us</Button>
       </header>
