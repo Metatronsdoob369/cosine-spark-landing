@@ -71,7 +71,7 @@ const Index = () => {
 
       {/* Services Section */}
       <section className="container mx-auto px-4 py-24">
-        <ServiceCircuit autoDemo />
+        <ServiceCircuit />
       </section>
 
       {/* Pricing Section */}
