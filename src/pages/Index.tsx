@@ -40,7 +40,7 @@ const Index = () => {
             <span className="text-lg font-bold text-white tracking-tight">C<sup className="text-xs">+</sup></span>
           </div>
           <div className="flex flex-col">
-            <div className="text-xl font-bold tracking-tight">CoSINe<sup className="text-sm text-[#909f96]">+</sup></div>
+            <div className="text-xl font-bold tracking-tight" style={{fontFamily: 'Monument Extended, sans-serif'}}>CoSINe<sup className="text-sm text-[#909f96]">+</sup></div>
             <div className="text-xs text-gray-500 font-medium">AUTONOMOUS</div>
           </div>
         </div>
@@ -48,8 +48,8 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20 text-center network-bg">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight bg-gradient-to-r from-slate-300 to-slate-500 bg-clip-text text-transparent">
+      <section className="container mx-auto px-4 py-20 text-center">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-slate-300 to-slate-500 bg-clip-text text-transparent" style={{fontFamily: 'Monument Extended, sans-serif'}}>
           We Handle Systems, So You Can Handle People
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
