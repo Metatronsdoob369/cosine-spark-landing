@@ -49,13 +49,8 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20 text-center">
-        <div className="mb-4">
-          <h2 className="text-lg md:text-xl text-[#909f96] font-medium tracking-wide" style={{fontFamily: 'JetBrains Mono, monospace'}}>
-            Systems with a Sine of Life
-          </h2>
-        </div>
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-slate-300 to-slate-500 bg-clip-text text-transparent" style={{fontFamily: 'JetBrains Mono, monospace'}}>
-          We Handle Systems, So You Can Handle People
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-white tracking-wider" style={{fontFamily: 'JetBrains Mono, monospace', letterSpacing: '0.1em'}}>
+          SYSTEMS WITH A SINE OF LIFE
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
           Automation at the right angle — transforming interference into clarity, so your team can move with focus and momentum.
